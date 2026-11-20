@@ -1,4 +1,4 @@
-# STM32H503CBT6 template
+# SGPS Board Firmware
 
 ## Overview
 
