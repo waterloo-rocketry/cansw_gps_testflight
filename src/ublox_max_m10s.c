@@ -1,0 +1,1 @@
+#include "ublox_max_m10s.h"
