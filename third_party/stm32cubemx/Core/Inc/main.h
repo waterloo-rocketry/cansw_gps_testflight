@@ -57,6 +57,24 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LED_Pin GPIO_PIN_13
+#define LED_GPIO_Port GPIOC
+#define UBLOX_UART_RX_Pin GPIO_PIN_1
+#define UBLOX_UART_RX_GPIO_Port GPIOA
+#define UBLOX_UART_TX_Pin GPIO_PIN_2
+#define UBLOX_UART_TX_GPIO_Port GPIOA
+#define ST_GPS_UART_RX_Pin GPIO_PIN_3
+#define ST_GPS_UART_RX_GPIO_Port GPIOA
+#define ST_GPS_UART_TX_Pin GPIO_PIN_5
+#define ST_GPS_UART_TX_GPIO_Port GPIOA
+#define BARO_I2C_SDA_Pin GPIO_PIN_13
+#define BARO_I2C_SDA_GPIO_Port GPIOB
+#define BARO_I2C_SCL_Pin GPIO_PIN_3
+#define BARO_I2C_SCL_GPIO_Port GPIOB
+#define MAG_I2C_SDA_Pin GPIO_PIN_5
+#define MAG_I2C_SDA_GPIO_Port GPIOB
+#define MAG_I2C_SCL_Pin GPIO_PIN_6
+#define MAG_I2C_SCL_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

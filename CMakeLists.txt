@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 
 # Set the project name
-set(CMAKE_PROJECT_NAME stm32h503_template)
+set(CMAKE_PROJECT_NAME cansw_gps_testflight)
 
 # Setup compiler settings
 set(CMAKE_C_STANDARD 11)
@@ -68,8 +68,8 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE inc)
 # Add project symbols (macros)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 	# Set BOARD_TYPE_UNIQUE_ID and BOARD_INST_UNIQUE_ID, e.g.:
-	# BOARD_TYPE_UNIQUE_ID=BOARD_TYPE_ID_INJECTOR
-	# BOARD_INST_UNIQUE_ID=BOARD_INST_ID_ROCKET
+	BOARD_TYPE_UNIQUE_ID=BOARD_TYPE_ID_GPS
+	BOARD_INST_UNIQUE_ID=BOARD_INST_ID_ROCKET
 )
  
 
