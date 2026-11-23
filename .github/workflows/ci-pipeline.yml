@@ -1,8 +1,10 @@
 name: CI Pipeline
 
+# Runs on pushes to pull request
 on: pull_request
 
 jobs:
+  # Build job
   ci-pipeline:
     name: Run CI Pipeline
     runs-on: ubuntu-22.04
@@ -13,7 +15,7 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install ARM toolchain and Ninja
+      - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y gcc-arm-none-eabi ninja-build
