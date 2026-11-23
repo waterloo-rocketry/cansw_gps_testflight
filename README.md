@@ -53,4 +53,4 @@ The actual main function in `third_party/stm32cubemx/Core/Src/main.c` just calls
 
 ### Format code
 
-From the CMake Tools extension, run the `format-check` and `format` CMake targets to respectively check the formatting of and format the code. In order to do this you must install `clang-format` from [LLVM](https://github.com/llvm/llvm-project/releases/)'s `clang-tools` and add it to your PATH. If it can't find it in your PATH despite being added, try restarting VS Code.
+Open the `CMake` extension tab. Under the Project Outline folder, run the `format-check` and `format` CMake targets to respectively check the formatting of and format the code. In order to do this you must install `clang-format` from [LLVM](https://github.com/llvm/llvm-project/releases/)'s `clang-tools` and add it to your PATH. If it can't find it in your PATH despite being added, try restarting VS Code.
