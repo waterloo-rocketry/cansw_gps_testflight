@@ -1,0 +1,33 @@
+name: C Coding Style Check
+
+# Runs on pushes to pull request
+on: pull_request
+
+jobs:
+  # Build job
+  clang-format-style-check:
+    name: C Coding Style Check (clang-format check)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          submodules: 'true'
+      - name: Install clang-format 23
+        id: llvm-install
+        shell: bash
+        run: |
+          wget https://apt.llvm.org/llvm.sh
+          chmod +x llvm.sh
+          sudo ./llvm.sh 23
+          sudo apt install clang-format-23
+      - name: Run formatting check
+        id: format-check
+        shell: bash
+        run: |
+          shopt -s nullglob
+          files=(
+            src/*.c
+            inc/*.h
+            )
+          clang-format-23 --dry-run -Werror --style=file:third_party/rocketlib/.clang-format "${files[@]}"
