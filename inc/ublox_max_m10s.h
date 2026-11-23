@@ -8,12 +8,14 @@
 extern "C" {
 #endif
 
+// latitude, longitude, and ellipsoidal altitude
 typedef struct {
     int32_t latitude;
     int32_t longitude;
     int32_t altitude;
 } ublox_max_m10s_Position;
 
+// NED North, East, and Down velocity
 typedef struct {
     int32_t velocityNorth;
     int32_t velocityEast;
@@ -23,12 +25,12 @@ typedef struct {
 // @brief A snapshot of all the data from the GNSS receiver, taken from a single navigation epoch
 // @note All data fields are valid only if isHealthGood is true
 typedef struct {
-    bool isHealthGood;                  // true if the receiver was in good health when the snapshot was taken
-    uint32_t timestamp;                 // GPS time of week of the navigation epoch (milliseconds since the start of the GPS week)
-    ublox_max_m10s_Position position;   // latitude, longitude, and ellipsoidal altitude
-    ublox_max_m10s_Velocity velocity;   // NED North, East, and Down velocity
-    int32_t groundSpeed;                // ground speed (2-D)
-    int32_t heading;                    // heading of motion (2-D)
+    bool isHealthGood;
+    uint32_t timestamp;
+    ublox_max_m10s_Position position;
+    ublox_max_m10s_Velocity velocity;
+    int32_t groundSpeed;
+    int32_t heading;
 } ublox_max_m10s_Data;
 
 // @brief Initializes communication with the GNSS receiver and applies all the configuration settings to it
