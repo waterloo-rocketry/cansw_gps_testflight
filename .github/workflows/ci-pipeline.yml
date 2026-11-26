@@ -1,34 +1,27 @@
 name: CI Pipeline
 
-on:
-    push:
+# Runs on pushes to pull request
+on: pull_request
 
 jobs:
-    run-pipeline:
-        name: Run CI Pipeline
-        runs-on: ubuntu-22.04
-        continue-on-error: true
+  # Build job
+  ci-pipeline:
+    name: Run CI Pipeline
+    runs-on: ubuntu-22.04
 
-        steps:
-            - name: Checkout this repo
-              uses: actions/checkout@v4
-              with:
-                  submodules: true
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
-            - name: Install dependencies
-              run:
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-arm-none-eabi ninja-build
 
-            - name: Build firmware binary debug
-              run:
+      - name: Configure
+        run: cmake --preset Release
 
-            - name: Build firmware binary release
-              run:
-
-            - name: Build and run unit tests
-              run:
-
-            - name: Run formatting check
-              uses: waterloo-rocketry/actions/clang-format-check@main
-              with:
-                  clang-format-config-path: "src/third_party/rocketlib/.clang-format"
-                  c-source-files: ""
+      - name: Build
+        run: cmake --build --preset Release
